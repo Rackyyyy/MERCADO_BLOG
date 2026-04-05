@@ -97,6 +97,7 @@ img {
   grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 32px;
+  align-items: start;
 }
 
 .blog-card {
