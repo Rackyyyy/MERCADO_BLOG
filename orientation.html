@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orientation | OJT Weekly Blog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="index.html" class="profile-link">
+        <div class="profile-card">
+          <img src="assets/images/profile.jpg" alt="Racquel Mercado profile" />
+          <div class="profile-copy">
+            <strong>Racquel Mercado</strong>
+            <span>OJT at Department of Health Bicol Region</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="site-brand">
+        <h1>OJT WEEKLY BLOG</h1>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <article class="blog-card">
+        <div class="card-content">
+          <h3 class="post-title">Orientation</h3>
+          <p>
+            February 20, 2026 marked our first meeting and the official start of our On-the-Job Training (OJT) at the Department of Health (DOH) Bicol Center for Health Development (CHD). We were oriented by Mrs. Anda, who provided us with important information regarding workplace policies, procedures, and expectations that we needed to follow during our training period.
+          </p>
+          <p>
+            After the orientation, we were assigned to our respective departments. I was assigned to the Regional Directors Office; however, since my designated mentor was not present at that time, I was temporarily assigned to the Office of the Assistant Regional Director for the day.
+          </p>
+          <p>
+            My initial task involved receiving various documents from the Records Section, such as emails, letters, purchase requests, and other official documents. After receiving these documents, I forwarded them to the Management Support Division (MSD), as they were the assigned Officer-in-Charge (OIC) for that day. I also processed and forwarded the said documents using the Document Tracking Information System (DTRAK) to ensure proper documentation, monitoring, and workflow of incoming and outgoing communications within the office.
+          </p>
+
+          <div class="resource-grid">
+            <button type="button" class="resource-item" data-src="assets/images/racquel/Orientation (Feb 20, 2026)/Orientation.jpg">
+              <img src="assets/images/racquel/Orientation (Feb 20, 2026)/Orientation.jpg" alt="Orientation image 1" />
+            </button>
+            <button type="button" class="resource-item" data-src="assets/images/racquel/Orientation (Feb 20, 2026)/Feb 20, 2026.jpg">
+              <img src="assets/images/racquel/Orientation (Feb 20, 2026)/Feb 20, 2026.jpg" alt="Orientation image 2" />
+            </button>
+            <button type="button" class="resource-item" data-src="assets/images/racquel/Orientation (Feb 20, 2026)/IMG_20260220_090157_814.jpg">
+              <img src="assets/images/racquel/Orientation (Feb 20, 2026)/IMG_20260220_090157_814.jpg" alt="Orientation image 3" />
+            </button>
+            <button type="button" class="resource-item" data-src="assets/images/racquel/Orientation (Feb 20, 2026)/4f25daef-572e-404b-a5dc-4deeac55ee6d.jpg">
+              <img src="assets/images/racquel/Orientation (Feb 20, 2026)/4f25daef-572e-404b-a5dc-4deeac55ee6d.jpg" alt="Orientation image 4" />
+            </button>
+          </div>
+
+          <div class="actions">
+            <a class="btn-primary" href="index.html">Back to blog</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <div class="lightbox-overlay hidden" id="lightboxOverlay">
+      <img class="lightbox-main" src="" alt="Selected orientation resource" />
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('lightboxOverlay');
+    const mainImage = document.querySelector('.lightbox-main');
+    const thumbsContainer = document.getElementById('lightboxThumbs');
+    const galleryButtons = document.querySelectorAll('.resource-item');
+    const imageSources = Array.from(galleryButtons).map(button => button.dataset.src);
+
+    function openLightbox(source) {
+      mainImage.src = source;
+      overlay.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      overlay.classList.add('hidden');
+      mainImage.src = '';
+    }
+
+    galleryButtons.forEach(button => {
+      button.addEventListener('click', () => openLightbox(button.dataset.src));
+    });
+
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
